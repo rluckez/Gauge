@@ -8,7 +8,11 @@ angular.module('confusionApp')
             
 			menuFactory.getBrands().query(
                 function(response) {
-                    $scope.brands = response;                    
+                    $scope.brands = response;
+					$scope.brandsMap = {};
+					$scope.brands.forEach(function(brand){
+						$scope.brandsMap[brand.id] = brand;
+					});                    
                 },
                 function(response) {
 					console.log("Error = ", response);
@@ -17,7 +21,11 @@ angular.module('confusionApp')
 			
 			menuFactory.getUsers().query(
 				function(response) {
-					$scope.users = response;                    
+					$scope.users = response;                    					
+					$scope.usersMap = {};
+					$scope.users.forEach(function(user){
+						$scope.usersMap[user.id] = user;
+					});
 				},
 				function(response) {
 					console.log("Error = ", response);
@@ -32,8 +40,7 @@ angular.module('confusionApp')
 					console.log("Error = ", response);
 				}
 			);
-
-                     
+			
 			$scope.getUserById = function (id){
 				for(var i = 0; i < $scope.users.length; i ++){					
 					if($scope.users[i].id == id){						

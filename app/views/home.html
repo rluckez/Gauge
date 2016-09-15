@@ -41,12 +41,12 @@
 					</thead>
 				</tr>
 				<tr ng-repeat="int in interactions | filter:{brand: selectedBrand}">
-					<td><img ng-src={{getUserById(int.user).picture.thumbnail}}></td>
+					<td><img ng-src={{usersMap[int.user].picture.thumbnail}}></td>
 					<td>{{ getUserById(int.user).name.first }}</td>
 					<td>{{ getUserById(int.user).nat }}</td>
 					<td>{{ getUserById(int.user).gender }}</td>
 					<td>{{ getBrandById(int.user).name }}</td>
-					<td><img ng-src={{getBrandById(int.brand).image}} alt="{{getBrandById(int.user).name}}"></td>					
+					<td><img ng-src={{brandsMap[int.brand].image}} alt="{{brandsMap[int.brand].name}}"></td>					
 				</tr>
 			</table>
 		</div>
