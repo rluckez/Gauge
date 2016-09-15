@@ -26,6 +26,13 @@ Pontos a melhorar:
 - Implementar maneira de remover o filtro uma vez que já aplicado;- 
 - Remover as dependências não utilizadas;
 - Remover o uso de rotas, o qual não é necessário para essa aplicação.
+- Apesar de ser um problema simples, ele tem alguns pontos cruciais, como é o caso do cruzamento das informações entre marcas e usuários, uma melhor solução do que a implementada seria criar maps para os usuários e para as marcas de tal maneira que as listas seriam iteradas apenas 1 vez e não diversas vezes como está atualmente.
+Exemplo:
+var usersMap = {};
+users.forEach(function(user){
+  usersMap[user.id] = user;
+});
+
 
 Dificuldades encontradas:
 - Falta de entendimento do que foi pedido, devido a maneira como está especificado no documento.
