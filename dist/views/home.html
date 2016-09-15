@@ -1,0 +1,54 @@
+<style>
+	table, th , td {
+		border: 1px solid grey;
+		border-collapse: collapse;
+		padding: 5px 15px;
+	}
+	table tr:nth-child(odd) {
+		background-color: #f1f1f1;
+	}
+	table tr:nth-child(even) {
+		background-color: #ffffff;
+	}
+</style>
+<div class="container">
+	<div class="row row-content" ng-controller="MenuController">
+
+		<div class="col-xs-12" ng-if="true">
+			<h3>Clique numa marca para filtrar:</h3>
+		</div>
+		
+		<div class="col-xs-12" ng-if="true">			
+			<ul class="nav nav-tabs" role="tablist">
+				<li ng-repeat="brand in brands" role="presentation" >
+					<a aria-controls="all menu" role="tab" ng-click="select(brand.id)">
+						<img class="" ng-src={{brand.image}} alt="{{brand.name}}">
+					</a>
+				</li>				
+			</ul>			
+			
+			<table>
+				<tr>
+					<thead>
+						<tr>
+							<th>Foto</th>
+							<th>Nome</th>
+							<th>Nacionalidade</th>
+							<th>Sexo</th>
+							<th>Marca</th>
+							<th>Logo</th>	
+						</tr>
+					</thead>
+				</tr>
+				<tr ng-repeat="int in interactions | filter:{brand: selectedBrand}">
+					<td><img ng-src={{getUserById(int.user).picture.thumbnail}}></td>
+					<td>{{ getUserById(int.user).name.first }}</td>
+					<td>{{ getUserById(int.user).nat }}</td>
+					<td>{{ getUserById(int.user).gender }}</td>
+					<td>{{ getBrandById(int.user).name }}</td>
+					<td><img ng-src={{getBrandById(int.brand).image}} alt="{{getBrandById(int.user).name}}"></td>					
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
