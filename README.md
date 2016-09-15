@@ -18,7 +18,8 @@ Pontos a melhorar:
 - Layout da aplicação;
 - Adicionar paginação na tabela;
 - Implementar tudo o que foi pedido na terafa;
+- Implementar maneira de remover o filtro uma vez que já aplicado.
 
 Dificuldades encontradas:
-- Falta de entendimento do que foi pedido, devido a maneira como o documento está especificada.
+- Falta de entendimento do que foi pedido, devido a maneira como está especificado no documento.
 - Tempo curto devido a hora em que vi o email falando sobre a atividade.
